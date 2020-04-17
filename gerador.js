@@ -11,8 +11,8 @@ function gerar() {
       
         title: ,
         size: 'md',
-        showBtnOk: false,
-        showBtnCancel: false,
+        showBtnOk: true,
+        showBtnCancel: true,
         resolve: {
             data: function () {
                 return {
