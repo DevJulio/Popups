@@ -1,6 +1,21 @@
 var resultado = document.getElementById('resultado');
+var nomePopups = document.getElementById("nomePopups");
+
 function gerar() {
     var NomePP = document.getElementById("NomePP").value;
+
+
+    nomePopups.innerHTML = '';
+
+    nomePopups.innerHTML = `<h3>Nome para os arquivos</h3>
+    </br></br>
+    HTML: ${NomePP}.tpl.html 
+    </br>
+    JS:  ${NomePP}.controller.js
+   
+    </br>
+    `
+
 
 
     var ArquivoPrincipal = ` var popupInstance = SanPopup.open({
@@ -11,8 +26,8 @@ function gerar() {
       
         title: ,
         size: 'md',
-        showBtnOk: true,
-        showBtnCancel: true,
+        showBtnOk: false,
+        showBtnCancel: false,
         resolve: {
             data: function () {
                 return {
@@ -41,6 +56,8 @@ function gerar() {
     `
 
     var ArquivoBody = `<script src="html5/SelecaoDocumento/popup/${NomePP}/${NomePP}.controller.js"></script>`
+
+
 
     var body = document.getElementById("body").value = ArquivoBody
     var principal = document.getElementById("principal").value = ArquivoPrincipal
